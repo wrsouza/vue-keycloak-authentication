@@ -46,7 +46,7 @@ router.beforeEach(async (to, from, next) => {
       console.log('Authenticated')
     }
     if (keycloak.token) {
-      localStorage.setItem('openfinance-token', keycloak.token)
+      localStorage.setItem('keycloak-token', keycloak.token)
     }
     next()
   } else {

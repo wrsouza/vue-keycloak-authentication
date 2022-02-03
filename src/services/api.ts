@@ -9,7 +9,7 @@ export const api = axios.create(config)
 const authInterceptor = (
   request: AxiosRequestConfig
 ): AxiosRequestConfig | Promise<AxiosRequestConfig> => {
-  const token = localStorage.getItem('openfinance-token')
+  const token = localStorage.getItem('keycloak-token')
   if (token && request.headers) {
     request.headers['Authorization'] = `Bearer ${token}`
   }
