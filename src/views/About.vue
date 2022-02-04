@@ -8,6 +8,9 @@
       <strong>E-mail:</strong> <span style="color: blue">{{ user.email }}</span><br>
       <strong>Username:</strong> <span style="color: blue">{{ user.username }}</span>
     </p>
+    <p style="padding: 0 20px; word-wrap: break-word;">
+      <strong>Token:</strong> <span style="color: blue">{{ user.token }}</span>
+    </p>
     <p>
       <router-link to="/logout">[ Sair da Sessão ]</router-link>
     </p>
@@ -25,7 +28,8 @@ export default defineComponent({
       firstName: '',
       lastName: '',
       email: '',
-      username: ''
+      username: '',
+      toke: ''
     })
     return {
       user
@@ -39,7 +43,8 @@ export default defineComponent({
         firstName: info.firstName,
         lastName: info.lastName,
         email: info.email,
-        username: info.username
+        username: info.username,
+        token: localStorage.getItem('keycloak-token')
       })
     }
   },
